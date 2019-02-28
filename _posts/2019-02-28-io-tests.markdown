@@ -1,0 +1,59 @@
+---
+layout: post
+title:  "Karlurium!"
+date:   2019-02-28 20:39:39 +0100
+categories: testing layering
+---
+
+* round-trip test
+  Testen tester akkurat det som alle andre tester driter i. Den tester
+  ingen funksjonalitet men avdekker om IO laget fungerer. (Med IO lag
+  mener vi hardware, wire, drivere, transport lag, input og output tolkingn i
+  applikasjonen). 
+
+  Sagt på en annen måte domene logikken i en round-trip test er så banal at
+  det kan umulig være den som feiler
+
+* isoler logikk fra IO
+
+* en test burde enten teste logikk eller IO
+
+* med andre ord vi mener det finnes 2 typer teser
+** en test som tester logikk separat fra input og output
+** en annen test som bare tester input og output
+   Denne testen baserer seg på at det finnes en fullstendig triviell
+   logikk (og dermed beviselig korrekt) i systemet under test (er dette alltid en round-trip?).
+
+   
+* hva i all verden mener når vi snakker om IO
+** koden i appen som håndterer input og output
+*** eksempler
+    - deserializering, serialisering
+    - parsing, genering
+    - request, response
+   
+** libraries og språk runtime
+   under vår kode ligger f.eks biblioteker for netverk, fil, klokker,
+   osv. Runtime passer på schedulering og overførsel fra data fra
+   drivere til programmer. Drivere tenker vi også på som runtime.
+
+** platform / OS
+   her er det scheduling og drivere
+
+
+** hardware
+   alle mulige slags ting og tang
+
+
+
+* hvis man vil at IO skal virke
+** må man bruke kryssplatform teknologi
+
+* vi må anta at versjoner er like
+
+* vi må anta at applikasjons ikke inneholder platform iffing
+
+* build time logikk og runtime logikk er helt forskjellig
+  
+
+

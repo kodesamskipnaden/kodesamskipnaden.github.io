@@ -55,5 +55,4 @@ categories: testing layering
 
 * build time logikk og runtime logikk er helt forskjellig
   
-
-
+* huske på å legge seg i tide

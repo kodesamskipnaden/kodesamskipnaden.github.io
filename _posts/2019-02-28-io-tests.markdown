@@ -68,7 +68,7 @@ drivere til programmer. Drivere tenker vi også på som runtime.
 
 * vi må anta at versjoner er like
 
-* vi må anta at applikasjons ikke inneholder platform iffing
+* vi må anta at applikasjonslogikk ikke inneholder platform iffing
 
 * build time logikk og runtime logikk er helt forskjellig
   
